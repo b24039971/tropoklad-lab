@@ -1,0 +1,30 @@
+# Robots.txt for Tropoklad Lab
+# Crawl configuration for web and AI search engines
+
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://b24039971.github.io/tropoklad-lab/sitemap.xml
+
+# AI Engine Documentation
+# https://llmstxt.org/
+LLMs: https://b24039971.github.io/tropoklad-lab/llms.txt
+LLMs-Full: https://b24039971.github.io/tropoklad-lab/llms-full.txt

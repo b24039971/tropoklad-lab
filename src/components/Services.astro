@@ -1,0 +1,531 @@
+---
+import { siteConfig } from '../config';
+---
+
+<section class="section services-section" id="services">
+  <div class="container">
+    
+    <div class="section-header reveal-on-scroll">
+      <div class="section-tag">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>НАПРАВЛЕНИЯ РАБОТЫ</span>
+      </div>
+      <h2 class="section-title">
+        Сфокусированные услуги для быстрого запуска
+      </h2>
+      <p class="section-description">
+        Разрабатываем цифровые инструменты без лишней бюрократии: от лендингов с конверсией до автономных AI-пайплайнов.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      
+      <!-- 01: Сайты -->
+      <div class="service-card card-tactile reveal-on-scroll">
+        <div class="card-top">
+          <span class="service-num mono">01</span>
+          <span class="service-badge mono">WEB & LANDINGS</span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Сайты</h3>
+          <div class="service-meta-pill mono">
+            <span class="service-price">от 45 000 ₽</span>
+            <span class="service-sep">/</span>
+            <span class="service-timeline">3–7 дней</span>
+          </div>
+          <p class="service-text">
+            Лендинги, каталоги, портфолио и продуктовые страницы. Адаптивные, быстрые и готовые к публикации.
+          </p>
+          
+          <div class="service-schematic" aria-hidden="true">
+            <div class="wireframe-mockup">
+              <div class="mockup-bar">
+                <span class="mockup-dot"></span>
+                <span class="mockup-url mono">preview.site/landing</span>
+              </div>
+              <div class="mockup-content">
+                <div class="mockup-line title"></div>
+                <div class="mockup-line sub"></div>
+                <div class="mockup-boxes">
+                  <div class="box"></div>
+                  <div class="box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="service-features">
+            <li>Мгновенная загрузка и статическая генерация</li>
+            <li>Идеальная адаптация под мобильные экраны</li>
+            <li>Базовая поисковая оптимизация и разметка</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="service-action-btn">
+            <span>Обсудить сайт</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 02: Telegram -->
+      <div class="service-card card-tactile reveal-on-scroll">
+        <div class="card-top">
+          <span class="service-num mono">02</span>
+          <span class="service-badge mono">BOTS & MINI APPS</span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Telegram</h3>
+          <div class="service-meta-pill mono">
+            <span class="service-price">от 35 000 ₽</span>
+            <span class="service-sep">/</span>
+            <span class="service-timeline">4–10 дней</span>
+          </div>
+          <p class="service-text">
+            Боты, мини-приложения, инструменты для сообществ и автоматизация рабочих процессов.
+          </p>
+
+          <div class="service-schematic" aria-hidden="true">
+            <div class="telegram-mockup">
+              <div class="tg-bubble bot">
+                <span class="tg-sender mono">@bot</span>
+                <span class="tg-text">Выберите действие или откройте приложение</span>
+              </div>
+              <div class="tg-keyboard">
+                <span class="tg-key mono">[ Карта услуг ]</span>
+                <span class="tg-key mono">[ Открыть WebApp ]</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="service-features">
+            <li>Telegram Web Apps (TMA) с чистым интерфейсом</li>
+            <li>Прием заявок, уведомления и сценарии оплаты</li>
+            <li>Автоматизация модерации и доступа в каналы</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="service-action-btn">
+            <span>Обсудить бота</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 03: AI-автоматизация -->
+      <div class="service-card card-tactile reveal-on-scroll">
+        <div class="card-top">
+          <span class="service-num mono">03</span>
+          <span class="service-badge mono">AGENTS & PIPELINES</span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">AI-автоматизация</h3>
+          <div class="service-meta-pill mono">
+            <span class="service-price">от 50 000 ₽</span>
+            <span class="service-sep">/</span>
+            <span class="service-timeline">5–14 дней</span>
+          </div>
+          <p class="service-text">
+            Агенты и сценарии для исследований, контента, поддержки и повторяющихся задач.
+          </p>
+
+          <div class="service-schematic" aria-hidden="true">
+            <div class="ai-node-graph mono">
+              <div class="node-pill input">DATA IN</div>
+              <div class="node-link">→</div>
+              <div class="node-pill agent">LLM ROUTER</div>
+              <div class="node-link">→</div>
+              <div class="node-pill output">RESULT</div>
+            </div>
+          </div>
+
+          <ul class="service-features">
+            <li>Автономные пайплайны обработки документов</li>
+            <li>Суммаризация данных, ресерч и парсинг</li>
+            <li>Интеграция передовых языковых моделей (LLM API)</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="service-action-btn">
+            <span>Обсудить автоматизацию</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 04: Контент и инструменты -->
+      <div class="service-card card-tactile reveal-on-scroll">
+        <div class="card-top">
+          <span class="service-num mono">04</span>
+          <span class="service-badge mono">PACKAGING & TOOLS</span>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Контент и инструменты</h3>
+          <div class="service-meta-pill mono">
+            <span class="service-price">от 25 000 ₽</span>
+            <span class="service-sep">/</span>
+            <span class="service-timeline">2–5 дней</span>
+          </div>
+          <p class="service-text">
+            Визуалы, видео, упаковка проектов, подбор и подключение необходимых AI-сервисов.
+          </p>
+
+          <div class="service-schematic" aria-hidden="true">
+            <div class="content-mosaic">
+              <div class="mosaic-tile visual"><span>SVG & BRAND</span></div>
+              <div class="mosaic-tile video"><span>VIDEO PROMPT</span></div>
+              <div class="mosaic-tile access"><span>AI ACCESS</span></div>
+            </div>
+          </div>
+
+          <ul class="service-features">
+            <li>Целостная визуальная концепция продукта</li>
+            <li>Генерация медиа-материалов и видео-промо</li>
+            <li>Подключение корпоративных доступов к нейросетям</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="service-action-btn">
+            <span>Подобрать инструменты</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .services-section {
+    background: transparent;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.25rem 2rem;
+    background: rgba(13, 19, 31, 0.52);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-num {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .service-badge {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.06em;
+  }
+
+  .service-title {
+    font-size: 1.65rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .service-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  .service-price {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .service-sep {
+    color: var(--text-muted);
+  }
+
+  .service-timeline {
+    color: var(--text-secondary);
+  }
+
+  .service-text {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+  }
+
+  /* Schematics - Frosted Glass Container */
+  .service-schematic {
+    background: rgba(5, 7, 12, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .wireframe-mockup .mockup-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .mockup-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .mockup-url {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+  }
+  .mockup-line.title {
+    height: 8px;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .mockup-line.sub {
+    height: 6px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .mockup-boxes {
+    display: flex;
+    gap: 8px;
+  }
+  .mockup-boxes .box {
+    height: 24px;
+    flex: 1;
+    background: rgba(0, 242, 157, 0.06);
+    border: 1px dashed rgba(0, 242, 157, 0.2);
+    border-radius: 4px;
+  }
+
+  /* TG Mockup */
+  .tg-bubble {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+  }
+  .tg-sender {
+    display: block;
+    color: var(--accent-blue);
+    font-size: 0.68rem;
+    margin-bottom: 2px;
+  }
+  .tg-text {
+    color: var(--text-primary);
+  }
+  .tg-keyboard {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .tg-key {
+    background: rgba(0, 242, 157, 0.08);
+    border: 1px solid rgba(0, 242, 157, 0.2);
+    border-radius: 4px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+    color: var(--accent);
+  }
+
+  /* AI Graph */
+  .ai-node-graph {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.72rem;
+  }
+  .node-pill {
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
+  .node-pill.agent {
+    background: rgba(0, 242, 157, 0.1);
+    border-color: rgba(0, 242, 157, 0.3);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .node-link {
+    color: var(--text-muted);
+  }
+
+  /* Content Mosaic */
+  .content-mosaic {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .mosaic-tile {
+    flex: 1;
+    padding: 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+  }
+  .mosaic-tile.visual { border-top: 2px solid var(--accent); }
+  .mosaic-tile.video { border-top: 2px solid var(--accent-blue); }
+  .mosaic-tile.access { border-top: 2px solid var(--accent-amber); }
+
+  /* Feature List */
+  .service-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-features li {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .service-features li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* Action button */
+  .service-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: color var(--transition-fast), gap var(--transition-fast);
+  }
+
+  .service-action-btn:hover {
+    color: var(--accent);
+    gap: 0.75rem;
+  }
+
+  /* Bento Accent Tinting per service card */
+  .service-card:nth-child(1):hover {
+    border-color: rgba(0, 242, 157, 0.45);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+      0 24px 50px -10px rgba(0, 0, 0, 0.65),
+      0 0 35px -6px rgba(0, 242, 157, 0.25);
+  }
+
+  .service-card:nth-child(2) .service-num { color: var(--accent-blue); }
+  .service-card:nth-child(2) .service-features li::before { background: var(--accent-blue); }
+  .service-card:nth-child(2):hover {
+    border-color: rgba(56, 189, 248, 0.45);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+      0 24px 50px -10px rgba(0, 0, 0, 0.65),
+      0 0 35px -6px rgba(56, 189, 248, 0.25);
+  }
+  .service-card:nth-child(2) .service-action-btn:hover {
+    color: var(--accent-blue);
+  }
+
+  .service-card:nth-child(3) .service-num { color: #a78bfa; }
+  .service-card:nth-child(3) .service-features li::before { background: #a78bfa; }
+  .service-card:nth-child(3):hover {
+    border-color: rgba(167, 139, 250, 0.45);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+      0 24px 50px -10px rgba(0, 0, 0, 0.65),
+      0 0 35px -6px rgba(167, 139, 250, 0.25);
+  }
+  .service-card:nth-child(3) .service-action-btn:hover {
+    color: #a78bfa;
+  }
+
+  .service-card:nth-child(4) .service-num { color: var(--accent-amber); }
+  .service-card:nth-child(4) .service-features li::before { background: var(--accent-amber); }
+  .service-card:nth-child(4):hover {
+    border-color: rgba(251, 191, 36, 0.45);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
+      0 24px 50px -10px rgba(0, 0, 0, 0.65),
+      0 0 35px -6px rgba(251, 191, 36, 0.25);
+  }
+  .service-card:nth-child(4) .service-action-btn:hover {
+    color: var(--accent-amber);
+  }
+</style>

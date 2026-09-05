@@ -1,0 +1,323 @@
+---
+import { siteConfig } from '../config';
+---
+
+<section class="section projects-section" id="projects">
+  <div class="container">
+    
+    <div class="section-header reveal-on-scroll">
+      <div class="section-tag">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>ПРОДУКТОВАЯ ЛАБОРАТОРИЯ</span>
+      </div>
+      <h2 class="section-title">
+        Собственные проекты студии
+      </h2>
+      <p class="section-description">
+        Реальные инструменты и сервисы, разработанные и поддерживаемые командой Tropoklad Lab.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      
+      <!-- Project 1: Бесплатные поддомены -->
+      <article class="project-card card-tactile reveal-on-scroll">
+        <div class="project-inner">
+          <div class="project-header-bar">
+            <span class="project-badge live mono">СЕРВИС АКТИВЕН</span>
+            <span class="project-category mono">vibecoder.help</span>
+          </div>
+
+          <div class="project-main-content">
+            <h3 class="project-title">Бесплатные поддомены</h3>
+            <p class="project-desc">
+              Telegram-бот выдаёт пользователям персональные адреса в зоне vibecoder.help и помогает подключать сайты.
+            </p>
+
+            <!-- Visual Domain Card Terminal -->
+            <div class="project-ui-preview" aria-hidden="true">
+              <div class="ui-preview-header mono">
+                <span>DNS DISPATCHER</span>
+                <span class="status-green">ONLINE</span>
+              </div>
+              <div class="ui-preview-body mono">
+                <div class="cmd-line">$ request_subdomain --user @creator</div>
+                <div class="cmd-resp">→ ALLOCATED: <strong>project.vibecoder.help</strong></div>
+                <div class="cmd-resp subtle">✓ CNAME mapped to GitHub Pages</div>
+                <div class="cmd-resp subtle">✓ SSL certificate issued (Let's Encrypt)</div>
+              </div>
+            </div>
+
+            <ul class="project-feature-list">
+              <li>Быстрая привязка проектов на GitHub Pages, Vercel и хостинги</li>
+              <li>Автоматическая настройка DNS-записей через бота</li>
+              <li>Доступно для авторов и начинающих разработчиков</li>
+            </ul>
+          </div>
+
+          <div class="project-actions">
+            <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">
+              <span>Подключить адрес</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: AI-ассистент сообщества -->
+      <article class="project-card card-tactile reveal-on-scroll">
+        <div class="project-inner">
+          <div class="project-header-bar">
+            <span class="project-badge live mono">AI PIPELINE</span>
+            <span class="project-category mono">Telegram Community</span>
+          </div>
+
+          <div class="project-main-content">
+            <h3 class="project-title">AI-ассистент сообщества</h3>
+            <p class="project-desc">
+              Интеллектуальный помощник и модератор для большого технологического Telegram-сообщества.
+            </p>
+
+            <!-- Visual Bot Chat UI -->
+            <div class="project-ui-preview" aria-hidden="true">
+              <div class="ui-preview-header mono">
+                <span>ASSISTANT CONTEXT ROUTER</span>
+                <span class="status-blue">MODERATING</span>
+              </div>
+              <div class="ui-preview-body mono">
+                <div class="cmd-line">Msg: "Как настроить Astro с кастомным доменом?"</div>
+                <div class="cmd-resp">AI Assistant: "Добавьте CNAME в public/ и укажите site в astro.config..."</div>
+                <div class="cmd-resp subtle">✓ Спам отфильтрован (0.02s)</div>
+              </div>
+            </div>
+
+            <ul class="project-feature-list">
+              <li>Точные контекстные ответы на технические вопросы участников</li>
+              <li>Защита от спама и автоматическая фильтрация ссылок</li>
+              <li>Ежедневная выжимка ключевых тем обсуждения</li>
+            </ul>
+          </div>
+
+          <div class="project-actions">
+            <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary project-btn">
+              <span>Узнать об архитектуре</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: Магазин цифровых инструментов -->
+      <article class="project-card card-tactile reveal-on-scroll">
+        <div class="project-inner">
+          <div class="project-header-bar">
+            <span class="project-badge store mono">DIGITAL STORE</span>
+            <span class="project-category mono">AI Access Catalog</span>
+          </div>
+
+          <div class="project-main-content">
+            <h3 class="project-title">Магазин цифровых инструментов</h3>
+            <p class="project-desc">
+              Подписки и доступы к AI-сервисам для работы, создания контента и разработки.
+            </p>
+
+            <!-- Visual Store Catalog Snippet -->
+            <div class="project-ui-preview" aria-hidden="true">
+              <div class="ui-preview-header mono">
+                <span>CATALOG OVERVIEW</span>
+                <span class="status-cyan">DIRECT ACCESS</span>
+              </div>
+              <div class="ui-preview-body mono">
+                <div class="cmd-line">Категории: LLM • Code • Video • Design</div>
+                <div class="cmd-resp">Доступно: ChatGPT, Claude Pro, Cursor, Midjourney</div>
+                <div class="cmd-resp subtle">✓ Мгновенная выдача и инструкции</div>
+              </div>
+            </div>
+
+            <ul class="project-feature-list">
+              <li>Полноценные доступы к зарубежным передовым нейросетям</li>
+              <li>Оплата в привычном формате без сложностей с картами</li>
+              <li>Инструкции по настройке и русскоязычная поддержка</li>
+            </ul>
+          </div>
+
+          <div class="project-actions">
+            <a href={siteConfig.links.shopUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary project-btn highlight">
+              <span>Перейти в магазин</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    background: transparent;
+    position: relative;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(13, 19, 31, 0.52);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+  }
+
+  .project-inner {
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .project-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .project-badge.live {
+    color: var(--accent);
+    background: rgba(0, 242, 157, 0.08);
+    border: 1px solid rgba(0, 242, 157, 0.25);
+  }
+  .project-badge.store {
+    color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+  }
+
+  .project-category {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.85rem;
+    color: var(--text-primary);
+  }
+
+  .project-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  /* UI Preview Terminal - Frosted Glass */
+  .project-ui-preview {
+    background: rgba(5, 7, 12, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .ui-preview-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-muted);
+  }
+
+  .status-green { color: var(--accent); }
+  .status-blue { color: var(--accent-blue); }
+  .status-cyan { color: var(--accent); }
+
+  .ui-preview-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    line-height: 1.45;
+  }
+
+  .cmd-line {
+    color: #e2e8f0;
+  }
+
+  .cmd-resp {
+    color: var(--accent);
+  }
+
+  .cmd-resp.subtle {
+    color: var(--text-muted);
+  }
+
+  /* Features */
+  .project-feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-feature-list li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    line-height: 1.45;
+  }
+
+  .project-feature-list li::before {
+    content: '✓';
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  /* Action */
+  .project-btn {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 0.92rem;
+  }
+</style>

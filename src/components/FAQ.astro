@@ -1,0 +1,156 @@
+---
+import { siteConfig } from '../config';
+---
+
+<section class="section faq-section" id="faq">
+  <div class="container">
+    
+    <div class="section-header reveal-on-scroll">
+      <div class="section-tag">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>ОТВЕТЫ НА ВОПРОСЫ</span>
+      </div>
+      <h2 class="section-title">
+        Частые вопросы
+      </h2>
+      <p class="section-description">
+        Коротко и честно о формате работы, сроках обсуждения и доступных решениях.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      {siteConfig.faq.map((item, index) => (
+        <details class="faq-item card-tactile reveal-on-scroll" name="faq-accordion">
+          <summary class="faq-summary">
+            <span class="faq-num mono">0{index + 1}</span>
+            <span class="faq-question">{item.question}</span>
+            <span class="faq-chevron" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>{item.answer}</p>
+            {index === 3 && (
+              <div class="faq-inline-link">
+                <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="faq-cta-link">
+                  Написать напрямую в Telegram →
+                </a>
+              </div>
+            )}
+            {index === 4 && (
+              <div class="faq-inline-link">
+                <a href={siteConfig.links.shopUrl} target="_blank" rel="noopener noreferrer" class="faq-cta-link">
+                  Перейти в магазин инструментов →
+                </a>
+              </div>
+            )}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background: #07090e;
+  }
+
+  .faq-list {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: rgba(13, 19, 31, 0.52);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-normal);
+  }
+
+  .faq-item[open] {
+    border-color: rgba(0, 242, 157, 0.4);
+    background: rgba(18, 26, 42, 0.72);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.18), 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+  }
+
+  .faq-summary {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem 1.75rem;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+  }
+
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-num {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .faq-question {
+    font-family: var(--font-display);
+    font-size: 1.18rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+    line-height: 1.35;
+  }
+
+  .faq-chevron {
+    color: var(--text-muted);
+    transition: transform var(--transition-normal), color var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--accent);
+  }
+
+  .faq-answer {
+    padding: 0 1.75rem 1.75rem 3.5rem;
+  }
+
+  .faq-answer p {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .faq-inline-link {
+    margin-top: 0.85rem;
+  }
+
+  .faq-cta-link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: gap var(--transition-fast);
+  }
+
+  .faq-cta-link:hover {
+    gap: 0.55rem;
+    text-decoration: underline;
+  }
+</style>

@@ -1,0 +1,112 @@
+---
+import { siteConfig } from '../config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+}
+
+const {
+  title = siteConfig.seo.title,
+  description = siteConfig.seo.description,
+  canonicalUrl = siteConfig.seo.siteUrl,
+} = Astro.props;
+
+// JSON-LD Organization / ProfessionalService
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": siteConfig.brand.name,
+  "description": siteConfig.brand.description,
+  "url": siteConfig.seo.siteUrl,
+  "logo": `${siteConfig.seo.siteUrl}/favicon.svg`,
+  "sameAs": [
+    siteConfig.links.channelUrl
+  ],
+  "areaServed": siteConfig.seo.geo.areaServed.map(area => ({
+    "@type": "AdministrativeArea",
+    "name": area
+  })),
+  "knowsLanguage": ["ru", "en"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Услуги цифровой студии",
+    "itemListElement": siteConfig.services.map((service, index) => ({
+      "@type": "Offer",
+      "price": service.priceNum || 35000,
+      "priceCurrency": "RUB",
+      "description": `${service.description} Срок реализации: ${service.timeline}.`,
+      "itemOffered": {
+        "@type": "Service",
+        "name": service.title,
+        "description": service.description
+      },
+      "position": index + 1
+    }))
+  }
+};
+
+// JSON-LD WebSite
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteConfig.brand.name,
+  "url": siteConfig.seo.siteUrl,
+  "description": siteConfig.seo.description,
+  "inLanguage": "ru"
+};
+
+// JSON-LD FAQPage (matches visible FAQ 1:1)
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": siteConfig.faq.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+---
+
+<!-- Basic Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={siteConfig.seo.keywords.join(', ')} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07090e" />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+<link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`} />
+
+<!-- GEO Targeting Meta Tags -->
+<meta name="geo.region" content={siteConfig.seo.geo.region} />
+<meta name="geo.placename" content={siteConfig.seo.geo.placename} />
+<meta name="geo.position" content={siteConfig.seo.geo.position} />
+<meta name="ICBM" content={siteConfig.seo.geo.icbm} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={`${siteConfig.seo.siteUrl}/favicon.svg`} />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:site_name" content={siteConfig.brand.name} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${siteConfig.seo.siteUrl}/favicon.svg`} />
+
+<!-- Structured Data (JSON-LD) -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

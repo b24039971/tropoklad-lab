@@ -1,0 +1,251 @@
+---
+import { siteConfig } from '../config';
+---
+
+<section class="section shop-section" id="tools">
+  <div class="container">
+    
+    <div class="shop-card card-tactile reveal-on-scroll">
+      <div class="shop-grid">
+        
+        <!-- Left text column -->
+        <div class="shop-content">
+          <div class="section-tag shop-tag">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>{siteConfig.shop.badge}</span>
+          </div>
+
+          <h2 class="shop-title">
+            {siteConfig.shop.title}
+          </h2>
+
+          <p class="shop-description">
+            {siteConfig.shop.description}
+          </p>
+
+          <div class="shop-features">
+            {siteConfig.shop.highlights.map((item) => (
+              <div class="shop-feature-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="feature-icon" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="shop-cta-row">
+            <a href={siteConfig.links.shopUrl} target="_blank" rel="noopener noreferrer" class="btn btn-shop shop-main-btn">
+              <span>{siteConfig.shop.buttonText}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <span class="shop-note mono">Прямой переход в Telegram-каталог</span>
+          </div>
+        </div>
+
+        <!-- Right catalog matrix preview -->
+        <div class="shop-catalog-preview">
+          <div class="catalog-terminal">
+            <div class="terminal-bar mono">
+              <span>AI_TOOLBOX_INDEX</span>
+              <span class="pulse-dot-cyan"></span>
+            </div>
+
+            <div class="catalog-items-list">
+              {siteConfig.shop.catalogPreview.map((cat, idx) => (
+                <div class="catalog-category-card">
+                  <div class="category-header">
+                    <span class="category-num mono">0{idx + 1}</span>
+                    <span class="category-name">{cat.category}</span>
+                  </div>
+                  <div class="category-tools mono">{cat.items}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="terminal-footer mono">
+              <span>Все сервисы активны и проверены</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .shop-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .shop-card {
+    background: radial-gradient(circle at 12% 18%, rgba(0, 242, 157, 0.12) 0%, rgba(13, 19, 31, 0.55) 70%);
+    backdrop-filter: blur(32px) saturate(190%);
+    -webkit-backdrop-filter: blur(32px) saturate(190%);
+    border: 1px solid rgba(0, 242, 157, 0.3);
+    box-shadow: 
+      inset 0 1px 1px rgba(255, 255, 255, 0.2),
+      0 28px 60px -10px rgba(0, 0, 0, 0.7),
+      0 0 36px -8px rgba(0, 242, 157, 0.2);
+    padding: 2.5rem 1.75rem;
+  }
+
+  @media (min-width: 900px) {
+    .shop-card {
+      padding: 4rem 3.5rem;
+    }
+  }
+
+  .shop-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .shop-grid {
+      grid-template-columns: 1.15fr 1fr;
+    }
+  }
+
+  .shop-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.25rem;
+    line-height: 1.15;
+  }
+
+  .shop-description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .shop-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .shop-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  .feature-icon {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .shop-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .shop-main-btn {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+  }
+
+  .shop-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* Catalog Preview Column - Frosted Glass Terminal */
+  .catalog-terminal {
+    background: rgba(5, 7, 12, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .terminal-bar {
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .pulse-dot-cyan {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-blue);
+  }
+
+  .catalog-items-list {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .catalog-category-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    transition: all var(--transition-fast);
+  }
+
+  .catalog-category-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 242, 157, 0.3);
+    transform: translateX(3px);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .category-num {
+    font-size: 0.7rem;
+    color: var(--accent);
+  }
+
+  .category-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+  }
+
+  .category-tools {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+
+  .terminal-footer {
+    padding: 0.65rem 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid var(--border-subtle);
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-align: center;
+  }
+</style>

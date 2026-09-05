@@ -1,0 +1,164 @@
+---
+import { siteConfig } from '../config';
+---
+
+<section class="section process-section" id="process">
+  <div class="container">
+    
+    <div class="section-header reveal-on-scroll">
+      <div class="section-tag">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>ПРОЗРАЧНЫЙ ПРОЦЕСС</span>
+      </div>
+      <h2 class="section-title">
+        Как строится работа над проектом
+      </h2>
+      <p class="section-description">
+        Четыре понятных шага без бесконечных созвонов и лишних слоев менеджмента.
+      </p>
+    </div>
+
+    <div class="process-sequence">
+      {siteConfig.process.map((item, idx) => (
+        <div class="process-step card-tactile reveal-on-scroll">
+          <div class="step-counter-col">
+            <span class="step-badge mono">{item.step}</span>
+            {idx < siteConfig.process.length - 1 && <span class="step-connector" aria-hidden="true"></span>}
+          </div>
+
+          <div class="step-main-col">
+            <div class="step-headline-row">
+              <h3 class="step-title">{item.title}</h3>
+              <span class="step-stage-tag mono">ЭТАП {idx + 1}</span>
+            </div>
+            
+            <p class="step-description">{item.description}</p>
+            
+            <div class="step-outcome-pill">
+              <span class="outcome-label mono">РЕЗУЛЬТАТ ЭТАПА:</span>
+              <span class="outcome-value">{item.outcome}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .process-section {
+    background: transparent;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+  }
+
+  .process-sequence {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 1.75rem;
+    padding: 2.25rem 2rem;
+    background: rgba(13, 19, 31, 0.52);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    align-items: flex-start;
+  }
+
+  @media (max-width: 600px) {
+    .process-step {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem;
+    }
+  }
+
+  .step-counter-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .step-badge {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 242, 157, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 242, 157, 0.3);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .step-main-col {
+    flex: 1;
+  }
+
+  .step-headline-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .step-title {
+    font-size: 1.45rem;
+    color: var(--text-primary);
+  }
+
+  .step-stage-tag {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .step-description {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+  }
+
+  .step-outcome-pill {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .outcome-label {
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+  }
+
+  .outcome-value {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+</style>

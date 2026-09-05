@@ -1,0 +1,616 @@
+---
+import { siteConfig } from '../config';
+---
+
+<section class="hero-section" id="hero">
+  <div class="container hero-container">
+    
+    <!-- Top Hero Copy -->
+    <div class="hero-content">
+      <div class="section-tag reveal-on-scroll">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>{siteConfig.hero.badge}</span>
+      </div>
+
+      <h1 class="hero-title reveal-on-scroll">
+        Запускаем сайты, ботов и <span class="text-gradient">AI-системы</span>, которые работают
+      </h1>
+
+      <p class="hero-description reveal-on-scroll">
+        {siteConfig.hero.description}
+      </p>
+
+      <div class="hero-cta-group reveal-on-scroll">
+        <a href={siteConfig.hero.primaryCta.href} target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-hero-main">
+          <span>{siteConfig.hero.primaryCta.label}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <a href={siteConfig.hero.secondaryCta.href} class="btn btn-secondary btn-hero-sub">
+          <span>{siteConfig.hero.secondaryCta.label}</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Quick Trust Indicators (Fact-based, no fake numbers) -->
+      <div class="hero-meta reveal-on-scroll">
+        <div class="meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Без раздутых смет</span>
+        </div>
+        <div class="meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Прямой контакт в Telegram</span>
+        </div>
+        <div class="meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="meta-icon" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Чистая статическая сборка</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Original Visual Element: Interactive Product Launch Pipeline -->
+    <div class="pipeline-widget card-tactile reveal-on-scroll" id="launch-pipeline" aria-label="Интерактивная схема запуска цифрового продукта">
+      
+      <!-- Widget Top Bar -->
+      <div class="widget-header">
+        <div class="window-controls" aria-hidden="true">
+          <span class="control-dot red"></span>
+          <span class="control-dot yellow"></span>
+          <span class="control-dot green"></span>
+        </div>
+        <div class="widget-title mono">PRODUCT LAUNCH PIPELINE // TROPOKLAD LAB</div>
+        <div class="widget-badge mono">
+          <span class="pulse-dot"></span>
+          <span id="pipeline-live-status">STAGE: 01 // READY</span>
+        </div>
+      </div>
+
+      <!-- Interactive Stepper Track -->
+      <div class="pipeline-track" role="tablist" aria-label="Этапы запуска продукта">
+        {siteConfig.hero.pipelineSteps.map((step, idx) => (
+          <button 
+            type="button" 
+            role="tab"
+            class={`pipeline-step-btn ${idx === 0 ? 'is-active' : ''}`}
+            id={`tab-step-${step.id}`}
+            aria-selected={idx === 0 ? 'true' : 'false'}
+            aria-controls={`panel-step-${step.id}`}
+            data-step={idx}
+            data-id={step.id}
+          >
+            <span class="step-num mono">{step.number}</span>
+            <span class="step-label">{step.name}</span>
+            <span class="step-arrow" aria-hidden="true">→</span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Pipeline Dynamic Inspector Board -->
+      <div class="pipeline-inspector">
+        {siteConfig.hero.pipelineSteps.map((step, idx) => (
+          <div 
+            class={`inspector-panel ${idx === 0 ? 'is-active' : ''}`} 
+            id={`panel-step-${step.id}`} 
+            role="tabpanel"
+            aria-labelledby={`tab-step-${step.id}`}
+          >
+            <div class="inspector-grid">
+              
+              <!-- Left info side -->
+              <div class="panel-info">
+                <div class="panel-meta-row">
+                  <span class="panel-step-badge mono">STAGE {step.number}</span>
+                  <span class="panel-tag mono">{step.preview.tag}</span>
+                </div>
+                <h3 class="panel-title">{step.name}: {step.preview.title}</h3>
+                <p class="panel-desc">{step.description}</p>
+                
+                <div class="panel-deliverable-box">
+                  <span class="deliverable-label mono">АРТЕФАКТ ЭТАПА:</span>
+                  <p class="deliverable-text">{step.deliverable}</p>
+                </div>
+              </div>
+
+              <!-- Right schematic code/telemetry preview -->
+              <div class="panel-telemetry">
+                <div class="telemetry-box mono">
+                  <div class="telemetry-bar">
+                    <span class="telemetry-title">SYS.TELEMETRY</span>
+                    <span class="telemetry-stat">{step.preview.stats}</span>
+                  </div>
+                  <pre class="telemetry-code"><code>{step.preview.codeSnippet}</code></pre>
+                </div>
+
+                <!-- SVG Flow Graph with Active Pulse Nodes -->
+                <div class="schematic-svg-wrap" aria-hidden="true">
+                  <svg width="100%" height="60" viewBox="0 0 320 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="30" y1="30" x2="270" y2="30" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-dasharray="4 4" />
+                    <line x1="30" y1="30" x2={String(30 + idx * 80)} y2="30" stroke="#00f29d" stroke-width="2.5" />
+                    
+                    <circle cx="30" cy="30" r="7" fill={idx >= 0 ? '#00f29d' : '#131a27'} stroke="#07090e" stroke-width="2"/>
+                    {idx === 0 && <circle cx="30" cy="30" r="13" fill="none" stroke="#00f29d" stroke-width="1.5" class="svg-pulse" />}
+                    
+                    <circle cx="110" cy="30" r="7" fill={idx >= 1 ? '#00f29d' : '#131a27'} stroke="#07090e" stroke-width="2"/>
+                    {idx === 1 && <circle cx="110" cy="30" r="13" fill="none" stroke="#00f29d" stroke-width="1.5" class="svg-pulse" />}
+                    
+                    <circle cx="190" cy="30" r="7" fill={idx >= 2 ? '#00f29d' : '#131a27'} stroke="#07090e" stroke-width="2"/>
+                    {idx === 2 && <circle cx="190" cy="30" r="13" fill="none" stroke="#00f29d" stroke-width="1.5" class="svg-pulse" />}
+                    
+                    <circle cx="270" cy="30" r="7" fill={idx >= 3 ? '#00f29d' : '#131a27'} stroke="#07090e" stroke-width="2"/>
+                    {idx === 3 && <circle cx="270" cy="30" r="13" fill="none" stroke="#00f29d" stroke-width="1.5" class="svg-pulse" />}
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+    position: relative;
+  }
+
+  @media (min-width: 992px) {
+    .hero-section {
+      padding-top: 5.5rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .hero-content {
+    max-width: 860px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 6vw, 4.25rem);
+    line-height: 1.08;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.035em;
+  }
+
+  .text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-description {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    line-height: 1.55;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .btn-hero-main {
+    padding: 1rem 2rem;
+    font-size: 1.05rem;
+  }
+
+  .btn-hero-sub {
+    padding: 1rem 1.75rem;
+    font-size: 1.05rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .meta-icon {
+    color: var(--accent);
+  }
+
+  /* Interactive Pipeline Widget - iOS Liquid Glass */
+  .pipeline-widget {
+    background: rgba(11, 17, 28, 0.52);
+    backdrop-filter: blur(32px) saturate(190%);
+    -webkit-backdrop-filter: blur(32px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-lg);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+      0 32px 70px -12px rgba(0, 0, 0, 0.75),
+      0 0 40px -10px rgba(0, 242, 157, 0.15);
+  }
+
+  .widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .window-controls {
+    display: flex;
+    gap: 6px;
+  }
+
+  .control-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .control-dot.red { background: #ef4444; opacity: 0.8; }
+  .control-dot.yellow { background: #f59e0b; opacity: 0.8; }
+  .control-dot.green { background: #10b981; opacity: 0.8; }
+
+  .widget-title {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 600px) {
+    .widget-title {
+      display: none;
+    }
+  }
+
+  .widget-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  /* Track - Mobile Segmented Control */
+  .pipeline-track {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .pipeline-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .pipeline-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow-x: visible;
+    }
+  }
+
+  .pipeline-step-btn {
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--border-subtle);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+    position: relative;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 768px) {
+    .pipeline-step-btn {
+      white-space: normal;
+    }
+  }
+
+  .pipeline-step-btn:last-child {
+    border-right: none;
+  }
+
+  .pipeline-step-btn .step-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+  }
+
+  .pipeline-step-btn .step-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+  }
+
+  .pipeline-step-btn .step-arrow {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: transform var(--transition-fast), color var(--transition-fast);
+  }
+
+  .pipeline-step-btn:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .pipeline-step-btn:hover .step-label,
+  .pipeline-step-btn:hover .step-num {
+    color: var(--text-primary);
+  }
+
+  .pipeline-step-btn.is-active {
+    background: rgba(0, 242, 157, 0.08);
+  }
+
+  .pipeline-step-btn.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  .pipeline-step-btn.is-active .step-num {
+    color: var(--accent);
+  }
+
+  .pipeline-step-btn.is-active .step-label {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .pipeline-step-btn.is-active .step-arrow {
+    color: var(--accent);
+    transform: translateX(3px);
+  }
+
+  /* Inspector */
+  .pipeline-inspector {
+    padding: 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    .pipeline-inspector {
+      padding: 2.25rem;
+    }
+  }
+
+  .inspector-panel {
+    display: none;
+  }
+
+  .inspector-panel.is-active {
+    display: block;
+    animation: crossFade 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes crossFade {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes svgNodePulse {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+
+  .svg-pulse {
+    transform-origin: center;
+    animation: svgNodePulse 1.8s infinite cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .inspector-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    .inspector-grid {
+      grid-template-columns: 1.15fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .panel-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .panel-step-badge {
+    font-size: 0.72rem;
+    color: var(--accent);
+    background: rgba(0, 242, 157, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(0, 242, 157, 0.2);
+  }
+
+  .panel-tag {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .panel-title {
+    font-size: 1.45rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .panel-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .panel-deliverable-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--accent);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1.15rem;
+  }
+
+  .deliverable-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.08em;
+  }
+
+  .deliverable-text {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  /* Telemetry Box - iOS Glass Terminal */
+  .telemetry-box {
+    background: rgba(5, 7, 12, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .telemetry-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.72rem;
+  }
+
+  .telemetry-title {
+    color: var(--text-muted);
+  }
+
+  .telemetry-stat {
+    color: var(--accent);
+  }
+
+  .telemetry-code {
+    padding: 1.15rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+    overflow-x: auto;
+  }
+
+  .schematic-svg-wrap {
+    margin-top: 1rem;
+  }
+</style>
+
+<script>
+  // Interactive Pipeline Stepper
+  const stepButtons = document.querySelectorAll<HTMLButtonElement>('.pipeline-step-btn');
+  const panels = document.querySelectorAll<HTMLElement>('.inspector-panel');
+  const liveStatus = document.getElementById('pipeline-live-status');
+
+  const statusLabels = [
+    'STAGE: 01 // SCOPE DEFINED',
+    'STAGE: 02 // PROTOTYPE READY',
+    'STAGE: 03 // BUILD IN PROGRESS',
+    'STAGE: 04 // RELEASE LIVE'
+  ];
+
+  function activateStep(index: number) {
+    stepButtons.forEach((btn, idx) => {
+      const isActive = idx === index;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-selected', String(isActive));
+    });
+
+    panels.forEach((panel, idx) => {
+      panel.classList.toggle('is-active', idx === index);
+    });
+
+    if (liveStatus && statusLabels[index]) {
+      liveStatus.textContent = statusLabels[index];
+    }
+  }
+
+  stepButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const stepIdx = Number(btn.getAttribute('data-step') || 0);
+      activateStep(stepIdx);
+    });
+
+    btn.addEventListener('keydown', (e) => {
+      let currentIdx = Number(btn.getAttribute('data-step') || 0);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const nextIdx = (currentIdx + 1) % stepButtons.length;
+        activateStep(nextIdx);
+        stepButtons[nextIdx]?.focus();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prevIdx = (currentIdx - 1 + stepButtons.length) % stepButtons.length;
+        activateStep(prevIdx);
+        stepButtons[prevIdx]?.focus();
+      }
+    });
+  });
+</script>

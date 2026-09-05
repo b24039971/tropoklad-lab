@@ -1,0 +1,237 @@
+---
+import { siteConfig } from '../config';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    
+    <div class="footer-top">
+      
+      <!-- Brand column -->
+      <div class="footer-brand-col">
+        <a href="#" class="footer-logo">
+          <span class="logo-mark">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4 6H20M12 6V18M7 18H17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">TROPOKLAD<span class="brand-lab">LAB</span></span>
+        </a>
+        <p class="footer-desc">
+          {siteConfig.brand.description}
+        </p>
+        <div class="footer-status-pill mono">
+          <span class="pulse-dot"></span>
+          <span>{siteConfig.brand.statusText}</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="footer-links-group">
+        <div class="footer-nav-col">
+          <h3 class="footer-heading mono">НАВИГАЦИЯ</h3>
+          <ul class="footer-nav-list">
+            {siteConfig.nav.map((item) => (
+              <li><a href={item.href} class="footer-link">{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- External Studio Resources -->
+        <div class="footer-nav-col">
+          <h3 class="footer-heading mono">СВЯЗЬ И РЕСУРСЫ</h3>
+          <ul class="footer-nav-list">
+            <li>
+              <a href={siteConfig.links.contactUrl} target="_blank" rel="noopener noreferrer" class="footer-link highlight">
+                <span>Связаться в Telegram</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href={siteConfig.links.channelUrl} target="_blank" rel="noopener noreferrer" class="footer-link">
+                <span>Telegram-канал</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href={siteConfig.links.shopUrl} target="_blank" rel="noopener noreferrer" class="footer-link">
+                <span>Магазин инструментов</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright bar -->
+    <div class="footer-bottom">
+      <p class="copyright mono">
+        © {currentYear} {siteConfig.brand.name}. Все права защищены.
+      </p>
+      <div class="footer-meta-tags mono">
+        <span>STATIC GENERATION</span>
+        <span>•</span>
+        <span>SEO & AI SEARCH READY</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: #040609;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 4.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 900px) {
+    .footer-top {
+      grid-template-columns: 1.3fr 1fr;
+      justify-content: space-between;
+    }
+  }
+
+  .footer-brand-col {
+    max-width: 480px;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 242, 157, 0.1);
+    border: 1px solid rgba(0, 242, 157, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  .brand-lab {
+    color: var(--accent);
+    margin-left: 0.2rem;
+  }
+
+  .footer-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-links-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-heading {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-link {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-link:hover {
+    color: var(--text-primary);
+  }
+
+  .footer-link.highlight {
+    color: var(--accent);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+    }
+  }
+
+  .copyright {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .footer-meta-tags {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+</style>
